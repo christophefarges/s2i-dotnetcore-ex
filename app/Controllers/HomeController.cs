@@ -16,12 +16,13 @@ namespace app.Controllers
 
         public IActionResult Index()
         {
-            counter.Inc(1);
             return View();
         }
 
         public IActionResult About()
         {
+
+            counter.Inc(1);
             ViewData["Message"] = "Your application description page.";
 
             return View();
