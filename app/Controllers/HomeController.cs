@@ -12,7 +12,7 @@ namespace app.Controllers
     public class HomeController : Controller
     {
 
-        Counter counter = Metrics.CreateCounter("myCounter", "some help about this");
+        Counter counter = Metrics.CreateCounter("myCounter", "test counter");
 
         public IActionResult Index()
         {
