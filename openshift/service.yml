@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    scraper: dotnet
+  name: dotnet-example
+spec:
+  ports:
+    - name: web
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: telemetry
+      port: 1234
+      protocol: TCP
+      targetPort: 1234
+  selector:
+    name: dotnet-example
