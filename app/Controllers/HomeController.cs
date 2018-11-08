@@ -5,13 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using app.Models;
+using Prometheus;
 
 namespace app.Controllers
 {
     public class HomeController : Controller
     {
+
+        Counter counter = Metrics.CreateCounter("myCounter", "some help about this");
+
         public IActionResult Index()
         {
+            counter.Inc(1);
             return View();
         }
 
