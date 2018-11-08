@@ -1,4 +1,4 @@
-Forked from  [https://github.com/redhat-developer/s2i-dotnetcore-ex](redhat-developer/s2i-dotnetcore-ex)
+Forked from  https://github.com/redhat-developer/s2i-dotnetcore-ex[redhat-developer/s2i-dotnetcore-ex]
 
 This fork was created to showcase the inclusion of Prometheus compatible metrics in a .NET Core application.
 
