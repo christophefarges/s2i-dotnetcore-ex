@@ -1,3 +1,23 @@
+Forked from  [https://github.com/redhat-developer/s2i-dotnetcore-ex](redhat-developer/s2i-dotnetcore-ex)
+
+This fork was created to showcase the inclusion of Prometheus compatible metrics in a .NET Core application.
+
+The main changes are in the files 
+
+* app/Startup.cs (l63/64)
+* app/Controllers/HomeController.cs (l15, l25)
+
+The metrics are exposed on port 1234 of the application.
+
+A custom counter will increment each time the About page is requested.
+
+The openshift folder contains examples for the modification of the service serving the application 
+to also expose the 1234 port and a label allowing prometheus to discover the endpoint and collect metrics.
+
+The servicemonitor.yml file contains a servicemonitor definition compatible with the prometheus operator
+shipped with Openshift 3.11. It points to the previously created service.
+
+
 [[s2i-aspnet-example]]
 = .NET Core Sample App for OpenShift
 
