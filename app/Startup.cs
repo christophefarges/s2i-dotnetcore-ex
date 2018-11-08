@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Prometheus;
 
 namespace app
 {
@@ -58,6 +59,9 @@ namespace app
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            var metricServer = new MetricServer(port: 1234);
+            metricServer.Start();
         }
     }
 }
